@@ -3,14 +3,6 @@
  * Wide screens: the list of genres on the left, the desk photo held in
  * place on the right while the list scrolls. Phones: the list alone.
  */
-.topbar--sticky {
-  position: sticky;
-  top: env(safe-area-inset-top, 0px);
-  z-index: 5;
-  background: rgba(18, 11, 6, 0.86);
-  backdrop-filter: blur(6px);
-}
-
 .works {
   display: grid;
   grid-template-columns: minmax(0, 58fr) minmax(0, 42fr);
@@ -75,6 +67,23 @@
   margin-left: auto;
 }
 
+.genres li {
+  position: relative;
+}
+
+/* A genre with its own page makes the whole row clickable. */
+/* The link itself stays unpositioned and untransformed, so its overlay
+   stretches over the whole row rather than just the name. */
+.genre-link {
+  text-decoration: none;
+}
+
+.genre-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
 .genre-name {
   font-size: clamp(30px, 3.2vw, 42px);
   line-height: 1.15;
@@ -100,6 +109,15 @@
 .genres li:hover .genre-arrow {
   opacity: 0.55;
   transform: translateX(0);
+}
+
+.genre-link:focus-visible {
+  outline: none;
+}
+
+.genre-link:focus-visible::after {
+  outline: 2px solid var(--text);
+  outline-offset: -2px;
 }
 
 .genres li:hover .genre-name {

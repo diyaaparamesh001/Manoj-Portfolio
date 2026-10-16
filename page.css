@@ -36,6 +36,15 @@
   border-bottom: 1px solid var(--rule);
 }
 
+/* Header that stays at the top while long pages scroll. */
+.topbar--sticky {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 5;
+  background: rgba(18, 11, 6, 0.86);
+  backdrop-filter: blur(6px);
+}
+
 .brand {
   display: flex;
   flex-direction: column;
