@@ -44,11 +44,11 @@
       <section class="genre-group" aria-labelledby="non-fiction">
         <h2 id="non-fiction" class="group-label">Non-fiction</h2>
         <ul class="genres">
-          <li>
+          <li data-photo="mythology">
             <span class="genre-name">Mythology</span>
             <span class="genre-count">4 pieces</span>
           </li>
-          <li>
+          <li data-photo="health">
             <span class="genre-name">Health Writing</span>
             <span class="genre-count">3 pieces</span>
           </li>
@@ -108,7 +108,15 @@
       </section>
     </div>
 
-    <div class="works-photo" aria-hidden="true"></div>
+    <!-- The typewriter shows by default; hovering a genre with its own
+         photo fades that photo in (works.js). -->
+    <div class="works-photo" aria-hidden="true">
+      <img class="is-active" data-photo="default" src="assets/works-typewriter.jpg" alt="" />
+      <img data-photo="mythology" src="assets/works-mythology.jpg" alt="" />
+      <img data-photo="health" src="assets/works-health.jpg" alt="" />
+    </div>
   </main>
+
+  <script src="works.js"></script>
 </body>
 </html>

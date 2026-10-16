@@ -97,8 +97,31 @@
   position: sticky;
   top: calc(env(safe-area-inset-top, 0px) + 92px);
   height: calc(100vh - 92px);
-  background: url("assets/writing-desk.jpg") 62% center / cover no-repeat;
+  overflow: hidden;
+  background: #0d0805;
+}
+
+.works-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.works-photo img.is-active {
+  opacity: 1;
+}
+
+/* Soft shadow where the photo meets the list. */
+.works-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
   box-shadow: inset 24px 0 40px -20px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
 }
 
 @media (max-width: 860px) {
@@ -129,7 +152,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .genre-name {
+  .genre-name,
+  .works-photo img {
     transition: none;
   }
 }
