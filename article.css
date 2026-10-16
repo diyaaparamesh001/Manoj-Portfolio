@@ -126,6 +126,42 @@
   margin-top: 24px;
 }
 
+/*
+ * Newspaper layout, used by The Dance of Un-Democracy: text in two
+ * columns with a hairline between, broken up by bold pull quotes set
+ * between heavy rules.
+ */
+.prose--broadsheet .columns {
+  column-count: 2;
+  column-gap: 48px;
+  column-rule: 1px solid var(--rule);
+  margin-block: 48px;
+}
+
+.prose--broadsheet .columns > :first-child {
+  margin-top: 0;
+}
+
+.prose--broadsheet .columns p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.prose--broadsheet .columns h2 {
+  break-after: avoid;
+}
+
+.prose .pull-quote {
+  margin-block: 48px;
+  padding-block: 22px;
+  border-block: 2px solid var(--text);
+  font-size: clamp(26px, 3.4vw, 38px);
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  text-wrap: balance;
+}
+
 /* Closing rule with the way back on the left and a closing asterisk. */
 .article-end {
   display: flex;
@@ -157,6 +193,10 @@
 
   .asterism {
     margin: 52px 0;
+  }
+
+  .prose--broadsheet .columns {
+    column-count: 1;
   }
 }
 
