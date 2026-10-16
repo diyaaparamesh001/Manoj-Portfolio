@@ -123,10 +123,11 @@ body {
 }
 
 @media (max-width: 560px) {
-  /* Centre the whole block vertically on phones. */
+  /* Centre the block vertically on phones, nudged a little above the
+     middle by the larger bottom padding. */
   .hero {
     justify-content: center;
-    padding: 48px 16px;
+    padding: 40px 16px 18vh;
   }
 
   .menu {
