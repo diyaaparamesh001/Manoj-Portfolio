@@ -5,7 +5,8 @@
   --ink: #3e200c;
   --ink-soft: #5c3218;
   --button: rgba(226, 196, 150, 0.88);
-  --button-hover: rgba(243, 222, 186, 0.96);
+  /* Hover flips the button: dark ink fill, parchment lettering. */
+  --button-hover: rgba(46, 22, 8, 0.9);
   --serif: "Cormorant Garamond", "EB Garamond", Garamond, Georgia, serif;
   --devanagari: "Hind", "Noto Sans Devanagari", "Mangal", sans-serif;
 }
@@ -102,12 +103,18 @@ body {
   letter-spacing: 0.28em;
   text-decoration: none;
   text-transform: uppercase;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.menu a:hover {
+/* :active gives phones, which have no hover, the same feedback on tap. */
+.menu a:hover,
+.menu a:active {
+  border-color: var(--text-soft);
   background: var(--button-hover);
-  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+  color: var(--text);
+  transform: translateY(-2px);
 }
 
 .menu a:focus-visible {
@@ -116,6 +123,12 @@ body {
 }
 
 @media (max-width: 560px) {
+  /* Centre the whole block vertically on phones. */
+  .hero {
+    justify-content: center;
+    padding: 48px 16px;
+  }
+
   .menu {
     display: grid;
     grid-template-columns: 1fr 1fr;
