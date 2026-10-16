@@ -10,19 +10,6 @@
   padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px));
 }
 
-.back {
-  color: var(--text-soft);
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-decoration: none;
-  text-transform: uppercase;
-  opacity: 0.75;
-}
-
-.back:hover {
-  opacity: 1;
-}
-
 .genre-title {
   margin-top: 40px;
   font-size: clamp(56px, 8vw, 96px);
@@ -48,12 +35,37 @@
 }
 
 .piece {
+  position: relative;
   display: grid;
   grid-template-columns: 160px minmax(0, 1fr) auto auto;
   align-items: center;
   gap: 28px;
   padding-block: 26px;
   border-bottom: 1px solid var(--rule);
+}
+
+/* A piece with its own page makes the whole row clickable. */
+.piece-link {
+  text-decoration: none;
+}
+
+.piece-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.piece-link:focus-visible {
+  outline: none;
+}
+
+.piece-link:focus-visible::after {
+  outline: 2px solid var(--text);
+  outline-offset: -2px;
+}
+
+.piece:has(.piece-link):hover .piece-title {
+  color: var(--text-soft);
 }
 
 .piece-thumb {

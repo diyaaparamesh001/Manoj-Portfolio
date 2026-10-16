@@ -1,0 +1,141 @@
+/*
+ * A single piece of writing. Builds on styles.css and page.css: a large
+ * title whose second half is italic, a byline, a wide lead image, then
+ * the text in a comfortable reading column.
+ */
+.article {
+  max-width: 860px;
+  margin: 0 auto;
+  padding-block: 72px 120px;
+  padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px));
+}
+
+.kicker,
+.byline {
+  color: var(--text-soft);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.kicker span,
+.byline-dot {
+  margin-inline: 8px;
+  opacity: 0.6;
+}
+
+.article-title {
+  max-width: 13ch;
+  margin-top: 28px;
+  font-size: clamp(48px, 8vw, 104px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.7);
+}
+
+.article-title em {
+  display: block;
+  font-style: italic;
+}
+
+.byline {
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+}
+
+.byline-name {
+  color: var(--text);
+}
+
+.lead-image {
+  margin: 48px 0 0;
+}
+
+.lead-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.55);
+}
+
+.lead-image figcaption {
+  margin-top: 12px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--rule);
+  color: var(--text-soft);
+  font-size: 14px;
+  font-style: italic;
+  text-align: right;
+}
+
+.prose {
+  margin-top: 56px;
+}
+
+.prose p {
+  margin-top: 22px;
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+/* A single centred asterisk between sections. */
+.asterism {
+  margin: 72px 0;
+  border: 0;
+  text-align: center;
+}
+
+.asterism::before {
+  content: "*";
+  color: var(--text-soft);
+  font-size: 18px;
+}
+
+.prose h2 {
+  display: inline-block;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--text);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.prose h2 + p {
+  margin-top: 24px;
+}
+
+.todo {
+  padding: 16px 20px;
+  border: 1px dashed var(--rule);
+  color: var(--text-soft);
+  font-style: italic;
+}
+
+.back--end {
+  display: inline-block;
+  margin-top: 80px;
+}
+
+@media (max-width: 640px) {
+  .article {
+    padding-block: 44px 80px;
+  }
+
+  .article-title {
+    margin-top: 20px;
+  }
+
+  .prose p {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .asterism {
+    margin: 52px 0;
+  }
+}

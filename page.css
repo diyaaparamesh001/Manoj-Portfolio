@@ -99,6 +99,20 @@
   transform: rotate(90deg);
 }
 
+/* Small "← Section" link back up a level. */
+.back {
+  color: var(--text-soft);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.back:hover {
+  opacity: 1;
+}
+
 @media (max-width: 860px) {
   .topbar {
     grid-template-columns: 1fr auto;
