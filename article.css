@@ -109,16 +109,19 @@
   margin-top: 24px;
 }
 
-.todo {
-  padding: 16px 20px;
-  border: 1px dashed var(--rule);
-  color: var(--text-soft);
-  font-style: italic;
+/* Closing rule with the way back on the left and a closing asterisk. */
+.article-end {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 96px;
+  padding-top: 32px;
+  border-top: 1px solid var(--rule);
 }
 
-.back--end {
-  display: inline-block;
-  margin-top: 80px;
+.article-end-mark {
+  color: var(--text-soft);
+  font-size: 16px;
 }
 
 @media (max-width: 640px) {
