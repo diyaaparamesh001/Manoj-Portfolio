@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Manoj Ashodia (मनोज अशोदिया), writer." />
+  <title>Manoj Ashodia · Writer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Hind:wght@400&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Aged parchment, drawn with SVG noise so no image files are needed. -->
+  <svg class="parchment" aria-hidden="true" preserveAspectRatio="none">
+    <defs>
+      <!-- Soft cloudy staining across the whole sheet. -->
+      <filter id="stain" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.003 0.005" numOctaves="5" seed="7" />
+        <feColorMatrix type="matrix"
+          values="0 0 0 0 0.45
+                  0 0 0 0 0.24
+                  0 0 0 0 0.08
+                  -1.6 0 0 0 1.05" />
+        <feGaussianBlur stdDeviation="6" />
+      </filter>
+
+      <!-- Small dark foxing spots. -->
+      <filter id="speckle" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="1" seed="3" />
+        <feColorMatrix type="matrix"
+          values="0 0 0 0 0.35
+                  0 0 0 0 0.17
+                  0 0 0 0 0.05
+                  -12 0 0 0 3.3" />
+        <feGaussianBlur stdDeviation="1.5" />
+      </filter>
+
+      <!-- Ragged scorch marks, later masked to the edges. -->
+      <filter id="scorch" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="4" seed="11" />
+        <feColorMatrix type="matrix"
+          values="0 0 0 0 0.24
+                  0 0 0 0 0.10
+                  0 0 0 0 0.03
+                  -7 0 0 0 4.3" />
+        <feGaussianBlur stdDeviation="2" />
+      </filter>
+
+      <radialGradient id="vignette" cx="50%" cy="48%" r="75%">
+        <stop offset="0.45" stop-color="#000" stop-opacity="0" />
+        <stop offset="1" stop-color="#2c1406" stop-opacity="0.55" />
+      </radialGradient>
+
+      <!-- Black (hidden) in the middle, so the scorching only shows near the edges. -->
+      <radialGradient id="edgeFade" cx="50%" cy="50%" r="56%">
+        <stop offset="0.62" stop-color="#000" />
+        <stop offset="1" stop-color="#fff" />
+      </radialGradient>
+      <mask id="edges">
+        <rect width="100%" height="100%" fill="url(#edgeFade)" />
+      </mask>
+    </defs>
+
+    <rect width="100%" height="100%" fill="#d6ad7c" />
+    <rect width="100%" height="100%" filter="url(#stain)" />
+    <rect width="100%" height="100%" filter="url(#speckle)" opacity="0.6" />
+    <rect width="100%" height="100%" fill="url(#vignette)" />
+    <rect width="100%" height="100%" filter="url(#scorch)" mask="url(#edges)" />
+  </svg>
+
+  <main class="hero">
+    <p class="name-hi" lang="hi">मनोज अशोदिया</p>
+    <h1 class="name">Manoj Ashodia</h1>
+    <p class="role">Writer</p>
+
+    <nav class="menu" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#works">Works</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </main>
+</body>
+</html>

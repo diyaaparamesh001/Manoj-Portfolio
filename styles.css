@@ -1,0 +1,128 @@
+:root {
+  --ink: #4a2610;
+  --ink-soft: #5c3218;
+  --button: rgba(232, 203, 160, 0.72);
+  --button-hover: rgba(242, 220, 184, 0.9);
+  --serif: "Cormorant Garamond", "EB Garamond", Garamond, Georgia, serif;
+  --devanagari: "Hind", "Noto Sans Devanagari", "Mangal", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: #c99a66;
+  color: var(--ink);
+  font-family: var(--serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+.parchment {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: clamp(64px, 15vh, 140px) 16px 64px;
+  text-align: center;
+}
+
+.name-hi {
+  font-family: var(--devanagari);
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.2;
+  color: var(--ink-soft);
+}
+
+.name {
+  margin-top: clamp(12px, 2vw, 24px);
+  /* Letter spacing trails the last letter, so pad the start to recentre. */
+  padding-left: 0.28em;
+  font-size: clamp(30px, 4.6vw, 60px);
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.role {
+  margin-top: clamp(24px, 3.5vw, 44px);
+  padding-left: 0.3em;
+  font-size: clamp(16px, 1.6vw, 22px);
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: clamp(40px, 5vw, 56px);
+}
+
+.menu a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 144px;
+  height: 50px;
+  padding: 0 40px;
+  border: 1px solid var(--ink-soft);
+  background: var(--button);
+  box-shadow: 0 1px 2px rgba(60, 30, 10, 0.25);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.menu a:hover {
+  background: var(--button-hover);
+  transform: translateY(-1px);
+}
+
+.menu a:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+  .menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 340px;
+    gap: 12px;
+  }
+
+  .menu a {
+    min-width: 0;
+    padding: 0 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu a {
+    transition: none;
+  }
+}
