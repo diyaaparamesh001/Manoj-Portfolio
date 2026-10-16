@@ -142,3 +142,27 @@
     margin: 52px 0;
   }
 }
+
+/*
+ * White paper version, used by the Four Weirdest Rakshasas article:
+ * a pure white page with soft black text instead of the desk photo.
+ */
+.page--paper {
+  --text: #1c1a17;
+  --text-soft: #6e5b49;
+  --rule: rgba(28, 26, 23, 0.16);
+  background: #ffffff;
+  color: var(--text);
+}
+
+.page--paper .topbar--sticky {
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.page--paper .article-title {
+  text-shadow: none;
+}
+
+.page--paper .lead-image img {
+  box-shadow: none;
+}
