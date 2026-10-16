@@ -102,7 +102,7 @@
 }
 
 .piece-kind {
-  max-width: 150px;
+  max-width: 210px;
   color: var(--text-soft);
   font-size: 10px;
   letter-spacing: 0.18em;
