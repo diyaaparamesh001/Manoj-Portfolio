@@ -93,6 +93,11 @@
   line-height: 1.85;
 }
 
+/* A dialogue: short lines with more air between them. */
+.prose--dialogue p {
+  margin-top: 28px;
+}
+
 /* A single centred asterisk between sections. */
 .asterism {
   margin: 72px 0;
