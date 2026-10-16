@@ -3,7 +3,7 @@
 Portfolio website for Manoj Ashodia (मनोज अशोदिया), writer.
 
 It's a static site (HTML and CSS, no build step). The aged-paper
-background is drawn with SVG, so there are no image files.
+background is a photo of a writing desk, `assets/writing-desk.jpg`.
 
 ## Run locally
 

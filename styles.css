@@ -1,8 +1,11 @@
 :root {
-  --ink: #4a2610;
+  /* Light parchment text, to read on the dark desk photo. */
+  --text: #f3e2bf;
+  --text-soft: #e2c99a;
+  --ink: #3e200c;
   --ink-soft: #5c3218;
-  --button: rgba(232, 203, 160, 0.72);
-  --button-hover: rgba(242, 220, 184, 0.9);
+  --button: rgba(226, 196, 150, 0.88);
+  --button-hover: rgba(243, 222, 186, 0.96);
   --serif: "Cormorant Garamond", "EB Garamond", Garamond, Georgia, serif;
   --devanagari: "Hind", "Noto Sans Devanagari", "Mangal", sans-serif;
 }
@@ -18,18 +21,20 @@ body {
 }
 
 body {
-  background: #c99a66;
-  color: var(--ink);
+  background: #120b06;
+  color: var(--text);
   font-family: var(--serif);
   -webkit-font-smoothing: antialiased;
 }
 
-.parchment {
+/* The photo sits behind everything, darkened so the text stays legible. */
+.backdrop {
   position: fixed;
   inset: 0;
-  width: 100%;
-  height: 100%;
   z-index: -1;
+  background:
+    radial-gradient(ellipse at 50% 38%, rgba(12, 7, 3, 0.62) 0%, rgba(12, 7, 3, 0.4) 55%, rgba(12, 7, 3, 0.7) 100%),
+    url("assets/writing-desk.jpg") center 60% / cover no-repeat;
 }
 
 .hero {
@@ -46,7 +51,8 @@ body {
   font-family: var(--devanagari);
   font-size: clamp(28px, 3vw, 40px);
   line-height: 1.2;
-  color: var(--ink-soft);
+  color: var(--text-soft);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
 }
 
 .name {
@@ -58,6 +64,7 @@ body {
   letter-spacing: 0.28em;
   line-height: 1.1;
   text-transform: uppercase;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.85);
 }
 
 .role {
@@ -67,6 +74,8 @@ body {
   font-weight: 700;
   letter-spacing: 0.3em;
   text-transform: uppercase;
+  color: var(--text-soft);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
 }
 
 .menu {
@@ -86,7 +95,7 @@ body {
   padding: 0 40px;
   border: 1px solid var(--ink-soft);
   background: var(--button);
-  box-shadow: 0 1px 2px rgba(60, 30, 10, 0.25);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
   color: var(--ink);
   font-size: 13px;
   font-weight: 700;
@@ -102,7 +111,7 @@ body {
 }
 
 .menu a:focus-visible {
-  outline: 2px solid var(--ink);
+  outline: 2px solid var(--text);
   outline-offset: 3px;
 }
 
