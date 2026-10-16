@@ -2,7 +2,7 @@
 
 Portfolio website for Manoj Ashodia (मनोज अशोदिया), writer.
 
-It's a static site (HTML and CSS, no build step). The aged-paper
+It's a static site (HTML and CSS, no build step). The
 background is a photo of a writing desk, `assets/writing-desk.jpg`.
 
 ## Run locally
