@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Writing services by Manoj Ashodia: blogs, articles, SEO, copywriting, ghostwriting, scripts, poems and more." />
+  <title>Services · Manoj Ashodia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&family=Caveat:wght@400;600&family=Hind:wght@400&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="page.css" />
+  <link rel="stylesheet" href="parchment.css" />
+  <link rel="stylesheet" href="services.css" />
+</head>
+<body class="page page--parchment">
+  <!-- Light parchment, drawn with SVG noise so no image file is needed. -->
+  <svg class="parchment" aria-hidden="true" preserveAspectRatio="none">
+    <defs>
+      <filter id="stain" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.003 0.005" numOctaves="5" seed="7" />
+        <feColorMatrix type="matrix"
+          values="0 0 0 0 0.45
+                  0 0 0 0 0.28
+                  0 0 0 0 0.12
+                  -1.2 0 0 0 0.8" />
+        <feGaussianBlur stdDeviation="6" />
+      </filter>
+      <filter id="speckle" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="1" seed="3" />
+        <feColorMatrix type="matrix"
+          values="0 0 0 0 0.35
+                  0 0 0 0 0.2
+                  0 0 0 0 0.08
+                  -12 0 0 0 3.3" />
+        <feGaussianBlur stdDeviation="1.5" />
+      </filter>
+      <radialGradient id="vignette" cx="50%" cy="45%" r="80%">
+        <stop offset="0.5" stop-color="#000" stop-opacity="0" />
+        <stop offset="1" stop-color="#3b220e" stop-opacity="0.28" />
+      </radialGradient>
+    </defs>
+    <rect width="100%" height="100%" fill="#dcc3a0" />
+    <rect width="100%" height="100%" filter="url(#stain)" opacity="0.7" />
+    <rect width="100%" height="100%" filter="url(#speckle)" opacity="0.35" />
+    <rect width="100%" height="100%" fill="url(#vignette)" />
+  </svg>
+
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-name">Manoj Ashodia</span>
+      <span class="brand-role">Writer</span>
+    </a>
+
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Manoj Ashodia</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Services</span>
+    </nav>
+
+    <a class="close" href="index.html" aria-label="Back to the homepage">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 4l16 16M20 4L4 20" />
+      </svg>
+    </a>
+  </header>
+
+  <main class="services">
+    <section class="intro" aria-labelledby="services-title">
+      <p class="note note--top" aria-hidden="true">what I do all day ↓</p>
+      <p class="note note--left" aria-hidden="true">deadline? <span class="note-red">lol.</span></p>
+      <p class="note note--right" aria-hidden="true">yes, I take notes on paper</p>
+      <svg class="note-arrow" viewBox="0 0 70 16" aria-hidden="true">
+        <path d="M2 10c18-4 40-5 64-1M58 4l8 5-9 5" />
+      </svg>
+
+      <h1 id="services-title">
+        Words, by an actual
+        <span class="circled">human<svg viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true"><path d="M14 30C30 6 150 2 188 24c16 10 6 36-40 46-46 9-120 6-136-14C2 42 14 22 52 14" /></svg></span>
+      </h1>
+
+      <p class="note note--under"><s class="note-red">AI</s> not included</p>
+    </section>
+
+    <ul class="cards">
+      <li class="card">
+        <h2>Blogs</h2>
+        <p>I can write a 5000 words blog on how to write blogs. It went viral. I wrote a blog about that too.</p>
+      </li>
+      <li class="card">
+        <h2>Articles</h2>
+        <p>From atoms to atheism, I can write anything under, above and inside the sun. Try me!</p>
+      </li>
+      <li class="card">
+        <h2>SEO Writing</h2>
+        <p>I don't just write for humans. Sometimes the machines needs to find you in a single click.</p>
+      </li>
+      <li class="card">
+        <h2>Copywriting</h2>
+        <p>I once sold a comb to a bald guy. Trust me bruh!</p>
+      </li>
+      <li class="card">
+        <h2>Ghostwriting</h2>
+        <p>Dont be scared. The text wont jump out of the NDA.</p>
+      </li>
+      <li class="card">
+        <h2>Scripts</h2>
+        <p>Int. Your room. Morning.<br />You hired me.<br />The next moment, a ninety-page award-winning script fell down from the sky.</p>
+      </li>
+      <li class="card">
+        <h2>Poems</h2>
+        <p>My thoughts were not quiet.<br />And I had to became a poet.</p>
+      </li>
+      <li class="card">
+        <h2>Mythology &amp; Books</h2>
+        <p>Last night I met Sisyphus. He wouldn't stop boasting about winning the personal defamation suit against Albert Camus</p>
+      </li>
+      <li class="card">
+        <h2>Absurd Stuff</h2>
+        <p>Because the moon isn't gonna eat itself!</p>
+      </li>
+    </ul>
+
+    <div class="hire">
+      <a class="hire-button" href="mailto:ashodiam@gmail.com">Hire the human →</a>
+      <p class="note note--hire">(responds <s>faster</s> better)</p>
+      <p class="note note--trash" aria-hidden="true">← crumpled drafts are in the trash</p>
+    </div>
+  </main>
+</body>
+</html>

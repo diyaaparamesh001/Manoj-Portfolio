@@ -1,0 +1,239 @@
+/*
+ * Services page. Builds on styles.css, page.css and parchment.css:
+ * a handwritten-notes headline, then the services as taped paper cards.
+ */
+.services {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-block: 72px 96px;
+  padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* Headline with notes scribbled around it. */
+
+.intro {
+  position: relative;
+  padding-block: 64px 40px;
+  text-align: center;
+}
+
+.intro h1 {
+  font-size: clamp(38px, 5.4vw, 64px);
+  font-weight: 700;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.circled {
+  position: relative;
+  white-space: nowrap;
+}
+
+.circled svg {
+  position: absolute;
+  inset: -18% -8% -14% -6%;
+  width: 114%;
+  height: 132%;
+  fill: none;
+  stroke: var(--red);
+  stroke-width: 3;
+  stroke-linecap: round;
+  overflow: visible;
+}
+
+.note {
+  color: var(--pencil);
+  font-family: var(--hand);
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.note-red {
+  color: var(--red);
+}
+
+.note--top,
+.note--left,
+.note--right {
+  position: absolute;
+}
+
+.note--top {
+  top: 8px;
+  left: 50%;
+  transform: translateX(-90%) rotate(-3deg);
+}
+
+.note--left {
+  top: 46%;
+  left: 2%;
+  transform: rotate(-7deg);
+}
+
+.note--right {
+  top: 22%;
+  right: 2%;
+  transform: rotate(6deg);
+}
+
+.note-arrow {
+  position: absolute;
+  top: 62%;
+  right: 6%;
+  width: 70px;
+  height: 16px;
+  fill: none;
+  stroke: var(--pencil);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.note--under {
+  margin-top: 18px;
+  transform: rotate(-2deg);
+}
+
+.note--under s {
+  text-decoration-thickness: 2px;
+}
+
+/* Taped paper cards, each tilted a little differently. */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 48px 40px;
+  margin-top: 48px;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  position: relative;
+  min-height: 170px;
+  padding: 36px 26px 30px;
+  border: 1.5px solid var(--card-edge);
+  border-radius: 4px 10px 6px 12px / 12px 6px 10px 4px;
+  background: var(--card);
+  box-shadow: 4px 5px 0 var(--card-edge), 0 10px 24px rgba(59, 34, 14, 0.18);
+  transform: rotate(-1deg);
+}
+
+.card:nth-child(3n + 2) {
+  transform: rotate(0.8deg);
+}
+
+.card:nth-child(3n) {
+  transform: rotate(-0.4deg);
+}
+
+.card:nth-child(4n + 1) {
+  transform: rotate(0.6deg);
+}
+
+/* A strip of tape holding each card up. */
+.card::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  width: 92px;
+  height: 26px;
+  background: var(--tape);
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+.card h2 {
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.card p {
+  margin-top: 14px;
+  color: var(--text-soft);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Call to action. */
+
+.hire {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 72px;
+  text-align: center;
+}
+
+.hire-button {
+  display: inline-block;
+  padding: 18px 36px;
+  border: 1.5px solid var(--card-edge);
+  border-radius: 3px 8px 4px 9px / 9px 4px 8px 3px;
+  background: #f5dfa8;
+  box-shadow: 4px 5px 0 var(--card-edge);
+  color: var(--text);
+  font-size: 21px;
+  text-decoration: none;
+  transform: rotate(-1deg);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.hire-button:hover {
+  background: #f9e8bd;
+  box-shadow: 2px 3px 0 var(--card-edge);
+  transform: rotate(-1deg) translate(2px, 2px);
+}
+
+.hire-button:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 4px;
+}
+
+.note--hire {
+  margin-top: 18px;
+  font-size: 20px;
+}
+
+.note--trash {
+  margin-top: 44px;
+  transform: rotate(-3deg);
+}
+
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .note--left,
+  .note--right,
+  .note-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .services {
+    padding-block: 32px 72px;
+  }
+
+  .intro {
+    padding-top: 48px;
+  }
+
+  .note--top {
+    transform: translateX(-50%) rotate(-3deg);
+  }
+
+  .cards {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hire-button {
+    transition: none;
+  }
+}

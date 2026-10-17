@@ -1,0 +1,29 @@
+/*
+ * Light parchment version of the inner pages (Services, Contact): the
+ * SVG paper sits behind everything and the text turns dark brown.
+ */
+.page--parchment {
+  --text: #3e230f;
+  --text-soft: #6b4a2e;
+  --rule: rgba(62, 35, 15, 0.22);
+  --hand: "Caveat", "Segoe Print", "Bradley Hand", cursive;
+  --pencil: #7a5a3c;
+  --red: #c9302c;
+  --card: #f7ead6;
+  --card-edge: #5a3418;
+  --tape: rgba(176, 132, 84, 0.65);
+  background: #dcc3a0;
+  color: var(--text);
+}
+
+.parchment {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.page--parchment .topbar {
+  border-bottom-color: var(--rule);
+}
