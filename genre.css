@@ -49,6 +49,11 @@
   border-bottom: 1px solid var(--rule);
 }
 
+/* A piece listed without a picture: title on the left, the rest on the right. */
+.piece--text {
+  grid-template-columns: minmax(0, 1fr) auto auto;
+}
+
 /* A piece with its own page makes the whole row clickable. */
 .piece-link {
   text-decoration: none;
@@ -192,6 +197,10 @@
 
   .piece-arrow {
     display: none;
+  }
+
+  .piece--text {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
