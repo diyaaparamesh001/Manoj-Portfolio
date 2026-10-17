@@ -49,11 +49,6 @@
   border-bottom: 1px solid var(--rule);
 }
 
-/* A book cover whose interest is at the top, such as a title band. */
-.piece-thumb--top {
-  object-position: center 30%;
-}
-
 /* A piece listed without a picture: title on the left, the rest on the right. */
 .piece--text {
   grid-template-columns: minmax(0, 1fr) auto auto;
