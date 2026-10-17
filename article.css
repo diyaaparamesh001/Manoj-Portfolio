@@ -133,6 +133,32 @@
   margin-top: 24px;
 }
 
+/*
+ * A script-style exchange, used by Devil and Manoj: each speaker's name
+ * in small capitals, their line in italics, and the action set apart.
+ */
+.prose--script .line {
+  margin-top: 14px;
+}
+
+.prose--script .speaker {
+  margin-right: 10px;
+  color: var(--text-soft);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.prose--script .stage {
+  margin-block: 36px;
+  font-style: italic;
+}
+
+.prose--script .stage:first-child {
+  margin-top: 0;
+}
+
 /* A single centred asterisk between sections. */
 .asterism {
   margin: 72px 0;
