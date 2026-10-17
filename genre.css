@@ -126,6 +126,36 @@
   transform: translateX(4px);
 }
 
+/* A genre whose samples can't be shown: a short note in place of the list. */
+.nda {
+  max-width: 520px;
+  margin-top: 56px;
+  padding-top: 56px;
+  border-top: 1px solid var(--rule);
+}
+
+.nda h2 {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.nda p {
+  margin-top: 14px;
+  color: var(--text-soft);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.nda a {
+  color: var(--text);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+
+.nda a:hover {
+  color: var(--text-soft);
+}
+
 @media (max-width: 640px) {
   .genre {
     padding-block: 48px 80px;
