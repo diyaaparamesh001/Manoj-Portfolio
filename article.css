@@ -159,6 +159,19 @@
   margin-top: 0;
 }
 
+/* A quoted fragment, such as the burnt letter in Butterfly. */
+.prose .fragment {
+  margin: 32px 0;
+  padding-left: 24px;
+  border-left: 2px solid var(--rule);
+  font-style: italic;
+}
+
+.prose .fragment p {
+  margin-top: 0;
+  color: var(--text-soft);
+}
+
 /* A single centred asterisk between sections. */
 .asterism {
   margin: 72px 0;
