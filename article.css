@@ -149,6 +149,11 @@
 
 .prose--broadsheet .columns h2 {
   break-after: avoid;
+  margin-top: 64px;
+}
+
+.prose--broadsheet .columns > h2:first-child {
+  margin-top: 0;
 }
 
 .prose .pull-quote {
