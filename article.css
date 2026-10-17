@@ -98,6 +98,41 @@
   margin-top: 28px;
 }
 
+/*
+ * A guide, used by the Kerala travel feature: a section heading over a
+ * run of places, each named by a smaller underlined heading.
+ */
+.prose.prose--guide h2 {
+  display: block;
+  margin-top: 72px;
+  padding-bottom: 0;
+  border-bottom: 0;
+  font-size: clamp(26px, 3.2vw, 34px);
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+.prose.prose--guide h3 {
+  display: inline-block;
+  margin-top: 56px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--text);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.prose--guide h2 + h3 {
+  margin-top: 32px;
+}
+
+.prose--guide h3 + p {
+  margin-top: 24px;
+}
+
 /* A single centred asterisk between sections. */
 .asterism {
   margin: 72px 0;
